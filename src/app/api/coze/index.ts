@@ -3,7 +3,7 @@ const CONVERSATION_ID = '123';
 export const postCozeData = async (query: any) => {
   const data = {
     conversation_id: CONVERSATION_ID,
-    bot_id: process.env.COZE_BOT_ID,
+    bot_id: process.env.NEXT_PUBLIC_COZE_BOT_ID,
     user: '29032201862555',
     query: query,
     // chat_history: {chat_history},
@@ -12,7 +12,7 @@ export const postCozeData = async (query: any) => {
   const response = await fetch(COZE_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.COZE_API_TOKEN}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_COZE_API_TOKEN}`,
       'Content-Type': 'application/json',
       Accept: '*/*',
       Host: 'api.coze.cn',
