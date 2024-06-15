@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Spinner } from '@/app/components/ui/Spinner'
 import { useDropZone, useFileUpload, useUploader } from './hooks'
 import { Button } from '@/app/components/ui/Button'

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useContext } from 'react';
+import useSpeechToText from 'react-hook-speech-to-text';
 import { Button, Tooltip, ScrollShadow } from '@nextui-org/react';
 import { Icon } from '@iconify/react';
 import PromptInput from '../prompt-imput';
@@ -10,6 +11,17 @@ import { EditorContext } from '@/app/context/EditorContext';
 
 export default function Component() {
   const { setIsAiLoading, setAiError } = useContext(EditorContext);
+  //   const {
+  //   error,
+  //   interimResult,
+  //   isRecording,
+  //   results,
+  //   startSpeechToText,
+  //   stopSpeechToText,
+  // } = useSpeechToText({
+  //   continuous: true,
+  //   useLegacyResults: false
+  // });
   const ideas = [
     {
       title: 'Create a blog post about NextUI',
@@ -120,7 +132,7 @@ export default function Component() {
               }
               variant='flat'
             >
-              Voice Commands
+              {'Voice Commands'}
             </Button>
             <Button
               size='sm'

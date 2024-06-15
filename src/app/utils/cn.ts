@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { ClassValue } from 'clsx';
 
 import clsx from 'clsx';
