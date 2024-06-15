@@ -113,7 +113,7 @@ export default function Component() {
 
   const controlsContent = (
     <>
-      <Textarea
+      {/* <Textarea
         fullWidth
         label="System"
         placeholder="You are a helpful Acme AI code assistant"
@@ -129,13 +129,13 @@ export default function Component() {
           {DEFAULT_MODELS.map((model) => (
             <SelectItem key={model}>{model}</SelectItem>
           ))}
-        </SelectSection>
-        <SelectSection title="Fine Tunes">
+        </SelectSection> */}
+        {/* <SelectSection title="Fine Tunes">
           {fineTuneModels.map((fineTunedModel) => (
             <SelectItem key={fineTunedModel}>{fineTunedModel}</SelectItem>
           ))}
         </SelectSection>
-      </Select>
+      </Select> */}
       {/* <div className="mt-2 flex w-full flex-col gap-6 px-1">
         <Slider
           aria-label="Temperature"
@@ -202,7 +202,8 @@ export default function Component() {
   return (
     <section className="h-full w-full p-4">
       <header className="flex w-full flex-col items-center gap-4 pb-6 lg:flex-row lg:justify-between">
-        <div className="flex items-center gap-2">
+        <h1 className="text-large font-medium">What are u F**K want to write</h1>
+        {/* <div className="flex items-center gap-2">
           <h1 className="text-large font-medium">Playground</h1>
           <Popover>
             <PopoverTrigger>
@@ -240,11 +241,11 @@ export default function Component() {
           <Button color="danger" size="sm" variant="flat">
             Delete
           </Button>
-        </div>
+        </div> */}
       </header>
       <main className="flex">
-        {/* Controls */}
-        <div className="hidden w-1/4 flex-none flex-col gap-4 lg:flex">{controlsContent}</div>
+        {/* Controls
+        <div className="hidden w-1/4 flex-none flex-col gap-4 lg:flex">{controlsContent}</div> */}
         {/* Chat */}
         <div className="relative flex w-full flex-col gap-2 lg:w-3/4">
           <PromptContainerWithConversation

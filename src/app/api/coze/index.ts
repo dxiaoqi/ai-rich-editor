@@ -1,12 +1,14 @@
+import { createHistoryPrompt } from '@/prompt';
+
 const COZE_URL = 'https://api.coze.cn/open_api/v2/chat';
 const CONVERSATION_ID = '123';
-export const postCozeData = async (query: any) => {
+export const postCozeData = async (query: any, doc: string) => {
   const data = {
     conversation_id: CONVERSATION_ID,
     bot_id: process.env.NEXT_PUBLIC_COZE_BOT_ID,
     user: '29032201862555',
-    query: query,
-    // chat_history: {chat_history},
+    query: `${query}`,
+    chat_history: createHistoryPrompt(doc),
     stream: false,
   };
   const response = await fetch(COZE_URL, {

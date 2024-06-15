@@ -39,7 +39,7 @@ import {
 } from '.';
 import { CodeBlockLowlight } from '@tiptap/extension-code-block-lowlight';
 import { lowlight } from 'lowlight';
-
+import { Markdown } from 'tiptap-markdown';
 interface ExtensionKitProps {
   provider?: HocuspocusProvider | null;
   userId?: string;
@@ -48,6 +48,7 @@ interface ExtensionKitProps {
 }
 
 export const ExtensionKit = () => [
+  Markdown,
   Document,
   Columns,
   TaskList,

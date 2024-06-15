@@ -41,7 +41,7 @@ export default function Component({
       <div className="flex flex-col gap-2">
         <PromptInputWithBottomActions />
         <p className="px-2 text-tiny text-default-400">
-          Acme AI can make mistakes. Consider checking important information.
+          Rich AI can make mistakes. Consider checking important information.
         </p>
       </div>
     </div>

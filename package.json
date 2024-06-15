@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "yjs": "^13.6.14",
     "@fontsource/inter": "^5.0.15",
     "@hocuspocus/provider": "^2.11.3",
     "@iconify/react": "^5.0.1",
@@ -62,6 +63,7 @@
     "react-hook-speech-to-text": "^0.8.0",
     "react-hot-toast": "^2.1.1",
     "tailwindcss-animate": "^1.0.6",
+    "tiptap-markdown": "^0.8.10",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

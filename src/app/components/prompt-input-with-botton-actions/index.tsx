@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import useSpeechToText from 'react-hook-speech-to-text';
 import { Button, Tooltip, ScrollShadow } from '@nextui-org/react';
 import { Icon } from '@iconify/react';
@@ -8,7 +8,6 @@ import PromptInput from '../prompt-imput';
 import { cn } from '@/app/utils/cn';
 import { postCozeData } from '@/app/api/coze';
 import { EditorContext } from '@/app/context/EditorContext';
-
 export default function Component() {
   const { setIsAiLoading, setAiError } = useContext(EditorContext);
   //   const {
@@ -20,7 +19,8 @@ export default function Component() {
   //   stopSpeechToText,
   // } = useSpeechToText({
   //   continuous: true,
-  //   useLegacyResults: false
+  //   useLegacyResults: false,
+  //   crossBrowser: true
   // });
   const ideas = [
     {
@@ -43,12 +43,16 @@ export default function Component() {
 
   const [prompt, setPrompt] = React.useState<string>('');
 
+  const getDocumentStructure = (editor) => {
+    return editor?.getHTML();
+  };
   const onSubmit = () => {
     setIsAiLoading(true);
-    postCozeData(prompt)
+    postCozeData(prompt, getDocumentStructure(window.editor))
       .then((data) => {
-        const md = data?.messages?.[0]?.content;
+        const md = data?.messages?.filter(e => e.type === 'answer')?.[0]?.content;
         if (typeof window !== 'undefined' && md) {
+          console.log(md);
           window.editor?.chain().focus().insertContent(md).run();
         }
       })
